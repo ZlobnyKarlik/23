@@ -1,0 +1,145 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp5
+{
+    /// <summary>
+    /// Логика взаимодействия для MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+        Polygon Polygon1 = new Polygon();
+        Ellipse ellipse1 = new Ellipse();
+        Ellipse ellipse2 = new Ellipse();
+        Ellipse ellipse3 = new Ellipse();
+        Ellipse ellipse4 = new Ellipse();
+        Polygon Polygon2 = new Polygon();
+        private void draw(object sender, RoutedEventArgs e)
+        {
+            Polygon1.Points.Clear();
+            Polygon2.Points.Clear();
+            Canvas1.Children.Clear();
+            Polygon1.Stroke = Brushes.Red;
+            Polygon1.Fill = Brushes.Red;
+            Polygon1.StrokeThickness = 5;
+            Polygon1.Points.Add(new Point(80, 220));
+            Polygon1.Points.Add(new Point(60, 220));
+            Polygon1.Points.Add(new Point(60, 145));
+            Polygon1.Points.Add(new Point(140, 145));
+            Polygon1.Points.Add(new Point(140, 100));
+            Polygon1.Points.Add(new Point(10, 100));
+            Polygon1.Points.Add(new Point(10, 350));
+            Polygon1.Points.Add(new Point(80, 350));
+            Canvas1.Children.Add(Polygon1);
+
+            ellipse1.Stroke = Brushes.Red;
+            ellipse1.Fill = Brushes.Red;
+            ellipse1.StrokeThickness = 5;
+            ellipse1.Height = 135;
+            ellipse1.Width = 145;
+            Canvas1.Children.Add(ellipse1);
+            Canvas.SetLeft(ellipse1, 10);
+            Canvas.SetTop(ellipse1, 217);
+
+            ellipse2.Stroke = Brushes.Red;
+            ellipse2.Fill = Brushes.White;
+            ellipse2.StrokeThickness = 5;
+            ellipse2.Height = 80;
+            ellipse2.Width = 80;
+            Canvas1.Children.Add(ellipse2);
+            Canvas.SetLeft(ellipse2, 40);
+            Canvas.SetTop(ellipse2, 240);
+
+            ellipse3.Stroke = Brushes.Red;
+            ellipse3.Fill = Brushes.Red;
+            ellipse3.StrokeThickness = 5;
+            ellipse3.Height = 280;
+            ellipse3.Width = 200;
+            Canvas1.Children.Add(ellipse3);
+            Canvas.SetLeft(ellipse3, 190);
+            Canvas.SetTop(ellipse3, 90);
+
+            ellipse4.Stroke = Brushes.Red;
+            ellipse4.Fill = Brushes.White;
+            ellipse4.StrokeThickness = 5;
+            ellipse4.Height = 255;
+            ellipse4.Width = 135;
+            Canvas1.Children.Add(ellipse4);
+            Canvas.SetLeft(ellipse4, 220);
+            Canvas.SetTop(ellipse4, 95);
+
+            Polygon2.Stroke = Brushes.Red;
+            Polygon2.Fill = Brushes.Red;
+            Polygon2.StrokeThickness = 5;
+            Polygon2.Points.Add(new Point(10, 80));
+            Polygon2.Points.Add(new Point(250, 80));
+            Polygon2.Points.Add(new Point(250, 100));
+            Polygon2.Points.Add(new Point(150, 100));
+            Polygon2.Points.Add(new Point(150, 350));
+            Polygon2.Points.Add(new Point(100, 350));
+            Polygon2.Points.Add(new Point(100, 100));
+            Polygon2.Points.Add(new Point(10, 80));
+            Polygon2.Points.Add(new Point(10, 80));
+            Canvas1.Children.Add(Polygon2);
+            Canvas.SetLeft(Polygon2, 400);
+            Canvas.SetTop(Polygon2, 15);
+        }
+        private void del(object sender, EventArgs e)
+        {
+            Polygon1.Points.Clear();
+            Polygon2.Points.Clear();
+            Canvas1.Children.Clear();
+        }
+        private void collor(object sender, EventArgs e)
+        {
+
+            Polygon1.Stroke = Brushes.Violet;
+            Polygon1.Fill = Brushes.Violet;
+            Polygon1.StrokeThickness = 5;
+
+            ellipse1.Stroke = Brushes.Violet;
+            ellipse1.Fill = Brushes.Violet;
+            ellipse1.StrokeThickness = 5;
+
+            ellipse4.Stroke = Brushes.Violet;
+            ellipse4.Fill = Brushes.White;
+            ellipse4.StrokeThickness = 5;
+
+            ellipse2.Stroke = Brushes.Violet;
+            ellipse2.Fill = Brushes.White;
+            ellipse2.StrokeThickness = 5;
+
+            ellipse3.Stroke = Brushes.Violet;
+            ellipse3.Fill = Brushes.Violet;
+            ellipse3.StrokeThickness = 5;
+
+            Polygon2.Stroke = Brushes.Violet;
+            Polygon2.Fill = Brushes.Violet;
+            Polygon2.StrokeThickness = 5;
+        }
+        private void ext(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void prog(object sender, EventArgs e)
+        {
+            MessageBox.Show("Новиков ИСП-23 23 практос");
+        }
+    }
+}
